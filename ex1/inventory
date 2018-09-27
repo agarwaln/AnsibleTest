@@ -1,0 +1,13 @@
+[appservers]
+app1 ansible_ssh_host=172.17.0.3
+
+[dbservers]
+db1 ansible_ssh_host=172.17.0.4
+
+[servers:children]
+appservers
+dbservers
+
+[servers:vars]
+ansible_ssh_user=root
+ansible_ssh_pass=

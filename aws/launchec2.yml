@@ -1,0 +1,21 @@
+---
+- name: Create AWS resources
+  hosts: localhost
+  connection: local
+  gather_facts: False 
+
+  tasks:
+  - name: Launch new ec2 instance
+    ec2:
+       aws_access_key: AKIAJBDRSH4GRYMOIYZA
+       aws_secret_key: 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
+       key_name: nitishaws1482
+       region: us-east-2
+       instance_type: t2.micro
+       image: ami-cf172aaa
+       wait: yes
+#       group: webserver
+       count: 1
+       vpc_subnet_id: subnet-0cbd5030a1879cda9
+       assign_public_ip: yes
+

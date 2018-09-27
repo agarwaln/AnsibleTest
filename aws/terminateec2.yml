@@ -1,0 +1,11 @@
+---
+- hosts: local
+  connection: local
+  tasks:
+  - name: Terminate ec2 instance
+    ec2:
+     aws_access_key: AKIAJBDRSH4GRYMOIYZA
+     aws_secret_key: 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
+     region: us-east-2
+     state: absent
+     instance_ids: i-08ff7ad8ca6159b87 
